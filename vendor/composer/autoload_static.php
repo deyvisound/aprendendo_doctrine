@@ -11,10 +11,19 @@ class ComposerStaticInit72dfc2a604e2bbdf3e68810d111aabbf
     );
 
     public static $prefixLengthsPsr4 = array (
+        'Z' => 
+        array (
+            'Zend\\Diactoros\\' => 15,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\Console\\' => 26,
+            'Slim\\Views\\' => 11,
+        ),
+        'P' => 
+        array (
+            'Psr\\Http\\Message\\' => 17,
         ),
         'D' => 
         array (
@@ -24,11 +33,16 @@ class ComposerStaticInit72dfc2a604e2bbdf3e68810d111aabbf
         ),
         'A' => 
         array (
+            'Aura\\Router\\' => 12,
             'App\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Zend\\Diactoros\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-diactoros/src',
+        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
@@ -36,6 +50,14 @@ class ComposerStaticInit72dfc2a604e2bbdf3e68810d111aabbf
         'Symfony\\Component\\Console\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
+        ),
+        'Slim\\Views\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/slim/php-view/src',
+        ),
+        'Psr\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
@@ -49,6 +71,10 @@ class ComposerStaticInit72dfc2a604e2bbdf3e68810d111aabbf
         array (
             0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
         ),
+        'Aura\\Router\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/aura/router/src',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
@@ -56,6 +82,13 @@ class ComposerStaticInit72dfc2a604e2bbdf3e68810d111aabbf
     );
 
     public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'Psr\\Log\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/psr/log',
+            ),
+        ),
         'D' => 
         array (
             'Doctrine\\ORM\\' => 
