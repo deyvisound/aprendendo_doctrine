@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <h3>Listagem de tabelas</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>NAME</td>
+                </tr>                
+            </thead>            
+            <tbody>
+                <?php foreach($categories as $category):?>
+                <tr>
+                    <td><?php echo $category->getId(); ?></td>
+                    <td><?php echo $category->getName(); ?></td>
+                </tr>
+                <?php endforeach; ?>                
+            </tbody>
+        </table>
+    </div>
+    
+</div>
