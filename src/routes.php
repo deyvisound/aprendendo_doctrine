@@ -46,10 +46,14 @@ $callable = $router->handler;
 /*@var $response Response*/
 $response = $callable($request, new Response());
 
-if($ajax){
-    echo $response->getBody();
+if($response instanceof Response\RedirectResponse){
+    header("Location:{$response->getHeader("location")[0]}");
 }else{
-    include __DIR__. "/../templates/header.phtml";
+    if($ajax){
         echo $response->getBody();
-    include __DIR__. "/../templates/footer.phtml";
+    }else{
+        include __DIR__. "/../templates/header.phtml";
+            echo $response->getBody();
+        include __DIR__. "/../templates/footer.phtml";
+    }
 }
