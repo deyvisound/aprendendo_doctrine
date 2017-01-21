@@ -20,18 +20,18 @@ class Category{
      *@column(type="string", length=100)
      * @var type 
      */
-    private $nome;
+    private $name;
 
     function getId() {
         return $this->id;
     }
 
-    function getNome() {
-        return $this->nome;
+    function getName() {
+        return $this->name;
     }
     
-    function setNome($nome) {
-        $this->nome = $nome;
+    function setName($name) {
+        $this->name = $name;
         return $this;
     }
     

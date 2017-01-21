@@ -1,11 +1,8 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @author Deyvison Rodrigo B. Estevam
  */
 
-require_once __DIR__.'/../vendor/autoload.php';
-require_once __DIR__.'/../src/doctrine.php';
-require_once __DIR__.'/../src/routers.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../src/doctrine.php';
+require_once __DIR__ . '/../src/routes.php';

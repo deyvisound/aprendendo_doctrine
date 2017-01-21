@@ -26,7 +26,6 @@ $entityManager = EntityManager::create($dbParams, $config);
 
 function getEntityManager(){
     global $entityManager;
-
     return $entityManager;
 }
 

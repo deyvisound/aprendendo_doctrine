@@ -18,4 +18,5 @@ return array(
     'Doctrine\\Common\\Annotations\\' => array($vendorDir . '/doctrine/annotations/lib/Doctrine/Common/Annotations'),
     'Doctrine\\Common\\' => array($vendorDir . '/doctrine/common/lib/Doctrine/Common'),
     'Aura\\Router\\' => array($vendorDir . '/aura/router/src'),
+    'App\\' => array($baseDir . '/src'),
 );

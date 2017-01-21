@@ -6,8 +6,8 @@
  * and open the template in the editor.
  */
 
-use Zend\Diactoros\Response;
 use Aura\Router\RouterContainer;
+use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequestFactory;
 use Slim\Views\PhpRenderer;
 
@@ -15,11 +15,13 @@ $ajax = false;
 
 //Boas práticas dizem que variáveis do tipo ' $_ ' não devem ser acessadas diretamente.
 $request = ServerRequestFactory::fromGlobals(
-    $_SERVER, $_COOKIE, $_REQUEST, $_POST, $_GET, $_FILES
+    $_SERVER, $_COOKIE, $_POST, $_GET, $_FILES
 );
 
 //Container para routas, armazenará rotas
 $routerContainer = new RouterContainer();
+
+$generator = $routerContainer->getGenerator();
 
 //Auxiliará na criação de rotas
 $map = $routerContainer->getMap();

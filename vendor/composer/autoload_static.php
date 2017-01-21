@@ -37,6 +37,7 @@ class ComposerStaticInit210260196bd0d5af0cd7606eb2b45267
         'A' => 
         array (
             'Aura\\Router\\' => 12,
+            'App\\' => 4,
         ),
     );
 
@@ -88,6 +89,10 @@ class ComposerStaticInit210260196bd0d5af0cd7606eb2b45267
         'Aura\\Router\\' => 
         array (
             0 => __DIR__ . '/..' . '/aura/router/src',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
