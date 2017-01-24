@@ -28,32 +28,36 @@ $map = $routerContainer->getMap();
 
 $view = new PhpRenderer(__DIR__."/../templates/");
 
-//incluindo rotas
-include __DIR__."/routerList.php";
+try{
+    //incluindo rotas
+    include __DIR__."/routerList.php";
 
-//Instanciando combinador...
-$matcher = $routerContainer->getMatcher();
+    //Instanciando combinador...
+    $matcher = $routerContainer->getMatcher();
 
-//Verifica se o request combina com alguma rota, se não combinar, recebe false.
-$router = $matcher->match($request);
+    //Verifica se o request combina com alguma rota, se não combinar, recebe false.
+    $router = $matcher->match($request);
 
-foreach ($router->attributes as $key => $value) {
-    $request = $request->withAttribute($key, $value);
-}
-
-$callable = $router->handler;
-
-/*@var $response Response*/
-$response = $callable($request, new Response());
-
-if($response instanceof Response\RedirectResponse){
-    header("Location:{$response->getHeader("location")[0]}");
-}else{
-    if($ajax){
-        echo $response->getBody();
-    }else{
-        include __DIR__. "/../templates/header.phtml";
-            echo $response->getBody();
-        include __DIR__. "/../templates/footer.phtml";
+    foreach ($router->attributes as $key => $value) {
+        $request = $request->withAttribute($key, $value);
     }
+
+    $callable = $router->handler;
+
+    /*@var $response Response*/
+    $response = $callable($request, new Response());
+
+    if($response instanceof Response\RedirectResponse){
+        header("Location:{$response->getHeader("location")[0]}");
+    }else{
+        if($ajax){
+            echo $response->getBody();
+        }else{
+            include __DIR__. "/../templates/header.phtml";
+                echo $response->getBody();
+            include __DIR__. "/../templates/footer.phtml";
+        }
+    }
+} catch (Exception $ex){
+    var_dump($ex);
 }

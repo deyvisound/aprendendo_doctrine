@@ -57,6 +57,61 @@ $map->post('categories.store', '/categories/store', function(ServerRequestInterf
 });
 //////////////////////////////
 
+
+//Editando Categorias//////////
+$map->get('categories.edit', '/categories/{id}/edit', function(ServerRequestInterface $request, $response) use($view, $entityManager){       
+    //Recebndo nosso array de dados
+    $id = $request->getAttribute('id');
+    
+    //resgatando dados
+    $categoryRepository = $entityManager->getRepository(Category::class);
+    $category = $categoryRepository->find($id);
+    
+    return $view->render($response, 'categories/edit.phtml', [
+        'category'    => $category
+    ]); 
+});
+//////////////////////////////
+
+//Atualizando Categorias//////////
+$map->post('categories.update', '/categories/{id}/update', function(ServerRequestInterface $request, $response) use($view, $entityManager, $generator){       
+    //Recebndo nosso array de dados
+    $data = $request->getParsedBody();
+    
+   //Resgatando o Id do URL
+    $id = $request->getAttribute('id');
+    
+    $categoryRepository = $entityManager->getRepository(Category::class);
+    $category = $categoryRepository->find($id);
+    
+    $category->setName($data["name"]);
+    
+    $entityManager->flush();
+            
+    $uri = $generator->generate("categories.list");
+    return new RedirectResponse($uri);
+});
+//////////////////////////////
+
+
+//Deletando Categorias//////////
+$map->get('categories.remove', '/categories/{id}/remove', function(ServerRequestInterface $request, $response) use($view, $entityManager, $generator){       
+    
+   //Resgatando o Id do URL
+    $id = $request->getAttribute('id');
+    
+    $categoryRepository = $entityManager->getRepository(Category::class);
+    $category = $categoryRepository->find($id);
+    
+    $entityManager->remove($category);
+    
+    $entityManager->flush();
+            
+    $uri = $generator->generate("categories.list");
+    return new RedirectResponse($uri);
+});
+//////////////////////////////
+
 function listCategories($request, $response, $view, $entityManager){
     $repository = $entityManager->getRepository(Category::class);
     $categories = $repository->findAll();

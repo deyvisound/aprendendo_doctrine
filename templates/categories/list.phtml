@@ -7,6 +7,7 @@
                 <tr>
                     <td>ID</td>
                     <td>NAME</td>
+                    <td>AÇÕES</td>
                 </tr>                
             </thead>            
             <tbody>
@@ -14,6 +15,13 @@
                 <tr>
                     <td><?php echo $category->getId(); ?></td>
                     <td><?php echo $category->getName(); ?></td>
+                    <td>
+                        <a href="/categories/<?php echo $category->getId(); ?>/edit">Editar</a>
+                        
+                        |
+                        
+                        <a href="/categories/<?php echo $category->getId(); ?>/remove">Remover</a>
+                    </td>
                 </tr>
                 <?php endforeach; ?>                
             </tbody>

@@ -9,6 +9,8 @@
             <file>file:/var/www/html/doctrine/templates/categories/list.phtml</file>
             <file>file:/var/www/html/doctrine/src/routerList.php</file>
             <file>file:/var/www/html/doctrine/src/routes.php</file>
+            <file>file:/var/www/html/doctrine/templates/categories/edit.phtml</file>
+            <file>file:/var/www/html/doctrine/src/Entity/Post.php</file>
         </group>
     </open-files>
 </project-private>
